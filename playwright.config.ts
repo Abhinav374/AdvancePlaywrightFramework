@@ -30,6 +30,8 @@ function resolveBaseURL(): string {
   }
 }
 
+export const baseURL = resolveBaseURL();
+
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
@@ -53,7 +55,7 @@ export default defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */
-    baseURL: resolveBaseURL(),
+    baseURL,
 
     /* Media for the custom report. 'on' captures for every test, pass or fail.
        For a real suite prefer 'only-on-failure' / 'retain-on-failure'. */
